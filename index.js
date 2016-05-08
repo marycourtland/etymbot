@@ -40,7 +40,7 @@ slackClient.on('message', function(message) {
             return;
         }
         if (result.matches.length === 0) {
-            reply += "_couldn't find an exact match for \"" + words[1] + "\"!_"
+            reply += "_couldn't find an exact match for \"" + words[1] + "\"!_\n"
         }
         else {
             result.matches.forEach(function(m) {
@@ -48,7 +48,7 @@ slackClient.on('message', function(message) {
             })
         }
         if (result.unmatched.length > 0) {
-            reply += '_' + result.unmatched.length + ' more results at ' + result.url + ' _'
+            reply += '_' + result.unmatched.length + ' other results at ' + result.url + ' _'
         } 
         channel.send(reply);
     });
