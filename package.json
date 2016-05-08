@@ -12,6 +12,7 @@
   "author": "Mary Bush",
   "license": "ISC",
   "dependencies": {
+    "noodlejs": "^0.3.2",
     "slack-client": "~1.4.0"
   }
 }
