@@ -1,0 +1,17 @@
+{
+  "name": "etymbot",
+  "version": "1.0.0",
+  "description": "A slackbot to fetch word etymologies",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "etymology"
+  ],
+  "author": "Mary Bush",
+  "license": "ISC",
+  "dependencies": {
+    "slack-client": "~1.4.0"
+  }
+}
