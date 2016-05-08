@@ -1,7 +1,8 @@
 if (!('SLACK_TOKEN' in process.env)) {
     console.log('Missing SLACK_TOKEN; please provide it in the env');
-    return;
+    process.exit(1);
 }
+
 var fetchEtymology = require('./etymology');
 var SlackClient = require('slack-client');
 var slackClient = new SlackClient(process.env.SLACK_TOKEN);
@@ -43,11 +44,11 @@ slackClient.on('message', function(message) {
         }
         else {
             result.matches.forEach(function(m) {
-                reply += '*' + m.word + '* ' + m.etymology;
+                reply += '*' + m.word + '* ' + m.etymology + '\n';
             })
         }
         if (result.unmatched.length > 0) {
-            reply += '\n_' + result.unmatched.length + ' more results at ' + result.url + ' _'
+            reply += result.unmatched.length + ' more results at ' + result.url + ' _'
         } 
         channel.send(reply);
     });
