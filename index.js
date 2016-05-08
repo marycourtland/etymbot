@@ -48,7 +48,7 @@ slackClient.on('message', function(message) {
             })
         }
         if (result.unmatched.length > 0) {
-            reply += result.unmatched.length + ' more results at ' + result.url + ' _'
+            reply += '_' + result.unmatched.length + ' more results at ' + result.url + ' _'
         } 
         channel.send(reply);
     });
