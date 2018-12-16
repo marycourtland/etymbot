@@ -24,7 +24,7 @@ slackClient.on('message', function(message) {
  
     var channel = slackClient.getChannelGroupOrDMByID(message.channel);
  
-    if (!message.text.match(trigger)) return;
+    if (!message.text || !message.text.match(trigger)) return;
 
     var words  = message.text.split(' ');
     if (words.length < 2) {
